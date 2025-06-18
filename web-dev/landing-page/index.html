@@ -2,15 +2,67 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Profesional</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Righteous&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <h1>Bienvenido a mi primera landing</h1>
+    <h1>German Dev</h1>
+    <nav>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#Servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
   </header>
-  <main>
-    <p>Esta es una página básica creada como práctica.</p>
-  </main>
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>
+      ¡Hola! Soy German, un apasionado desarrollador web con experiencia en
+      HTML, CSS y JavaScript. Me encanta crear sitios web atractivos y funcionales.
+    </p>
+  </section>
+  <section id="Servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Desarrollo de sitios web</li>
+      <li>Optimización de motores de búsqueda</li>
+      <li>Asesoramiento en diseño web</li>
+    </ul>
+  </section>
+ 
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes contactarme a través de <a href="mailto:german.dev@gmail.com">german.dev@gmail.com</a></p>
+  
+    <form action="enviar.php" method="post">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+  
+      <div>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+  
+      <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      </div>
+  
+      <div>
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 German Dev. Todos los derechos reservados.</p>
+  </footer>
 </body>
+
 </html>

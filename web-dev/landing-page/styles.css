@@ -1,12 +1,150 @@
+* {
+    box-sizing: border-box;
+  }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    line-height: 1.6;
   }
   
   header {
-    background-color: #333;
+    background: #D93A2B;
     color: white;
     padding: 10px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-family: 'Righteous';
+    font-size: 3.7em;
+    letter-spacing: 5px;
   }
   
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+
+}
+
+  nav ul li a:hover {
+    color: #F2A057; /* Moda-2 para hover */
+  }
+  
+  section {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  /* CONTACTO específico */
+  #contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  }
+  
+  #contacto h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  #contacto p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  #contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #contacto label {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  #contacto input,
+  #contacto textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  
+  #contacto button {
+    padding: 0.75rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #contacto button:hover {
+    background-color: #005fa3;
+  }
+  
+  /* 🔁 Responsive adjustments */
+  @media (max-width: 600px) {
+    #contacto {
+      padding: 1.5rem 1rem;
+    }
+  
+    #contacto h2 {
+      font-size: 1.5rem;
+    }
+  
+    #contacto p {
+      font-size: 0.95rem;
+    }
+  
+    #contacto input,
+    #contacto textarea,
+    #contacto button {
+      font-size: 0.95rem;
+    }
+  }
+
+ 
