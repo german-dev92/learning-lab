@@ -3,19 +3,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page Profesional</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page Profesional - German Dev</title>
+
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Righteous&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+
   <header>
     <h1>German Dev</h1>
-    <nav>
+    <nav aria-label="Navegación principal">
       <ul>
         <li><a href="#hero">Inicio</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#testimonios">Testimonios</a></li>
@@ -23,47 +29,39 @@
       </ul>
     </nav>
   </header>
-  <nav aria-label="Navegación principal">
-    <!-- ... -->
-  </nav>
 
-  <!-- === HERO / BIENVENIDA === -->
-  <section id="hero" class="fade-in">
-    <h1>Hola, soy German</h1>
+  <!-- HERO / BIENVENIDA -->
+  <section id="hero" class="fade-in" tabindex="0" aria-label="Sección de bienvenida">
+    <h2>Hola, soy German</h2>
     <p>
-      Apasionado por la tecnología, combino el desarrollo web con la ciencia de datos para crear proyectos funcionales y
-      con propósito. Este portafolio refleja mi compromiso con el aprendizaje constante, la integración de inteligencia
-      artificial en soluciones reales y la mejora continua como profesional del mundo digital.
+      Apasionado por la tecnología, combino el desarrollo web con la ciencia de datos para crear proyectos
+      funcionales y con propósito. Este portafolio refleja mi compromiso con el aprendizaje constante, la
+      integración de inteligencia artificial en soluciones reales y la mejora continua como profesional del
+      mundo digital.
     </p>
     <a href="#contacto" class="btn">Hablemos</a>
   </section>
 
-
-  <section id="sobre-mi">
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" class="fade-in" tabindex="0" aria-label="Sobre mí">
     <div class="container">
-      <!-- Carrusel de imágenes -->
-      <div class="carousel">
-        <img src="images/ft1.jpeg" alt="Foto 1" class="carousel-image active">
-        <img src="images/ft2.jpeg" alt="Foto 2" class="carousel-image">
-        <img src="images/ft3.jpeg" alt="Foto 3" class="carousel-image">
+      <div class="carousel" aria-roledescription="carousel">
+        <img src="images/ft1.jpeg" alt="Foto 1" class="carousel-image active" />
+        <img src="images/ft2.jpeg" alt="Foto 2" class="carousel-image" />
+        <img src="images/ft3.jpeg" alt="Foto 3" class="carousel-image" />
       </div>
 
-      <!-- Biografía -->
       <div class="bio">
         <h2>Sobre mí</h2>
         <p>
-          ¡Hola! Soy German, desarrollador web y científico de datos con un fuerte interés por la inteligencia
-          artificial y las tecnologías emergentes. Me apasiona construir soluciones eficientes y creativas,
-          manteniéndome al día con las tendencias del sector. Este portafolio refleja mi compromiso por crecer
-          constantemente, compartir lo que aprendo y aplicar mis conocimientos en proyectos reales que aporten valor.
+          ¡Hola! Soy German, desarrollador web y científico de datos con un fuerte interés por la inteligencia artificial y las tecnologías emergentes. Me apasiona construir soluciones eficientes y creativas, manteniéndome al día con las tendencias del sector. Este portafolio refleja mi compromiso por crecer constantemente, compartir lo que aprendo y aplicar mis conocimientos en proyectos reales que aporten valor.
         </p>
       </div>
     </div>
   </section>
 
-
-
-  <section id="Servicios" class="fade-in">
+  <!-- SERVICIOS -->
+  <section id="servicios" class="fade-in" tabindex="0" aria-label="Servicios ofrecidos">
     <h2>Servicios</h2>
     <ul>
       <li>Desarrollo de sitios web</li>
@@ -71,19 +69,20 @@
       <li>Asesoramiento en diseño web</li>
     </ul>
   </section>
-  <!-- === PORTAFOLIO / PROYECTOS === -->
-  <section id="proyectos" class="fade-in">
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="fade-in" tabindex="0" aria-label="Proyectos">
     <h2>Proyectos</h2>
-    <div class="proyecto">
+    <article class="proyecto">
       <h3>Nombre del Proyecto</h3>
       <p>Descripción breve del proyecto, tecnologías usadas y el objetivo principal.</p>
-      <a href="https://link-al-proyecto.com" target="_blank">Ver proyecto</a>
-    </div>
+      <a href="https://link-al-proyecto.com" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+    </article>
     <!-- Repetir bloque de proyecto según sea necesario -->
   </section>
 
-  <!-- === HABILIDADES TÉCNICAS === -->
-  <section id="habilidades" class="fade-in">
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="fade-in" tabindex="0" aria-label="Habilidades técnicas">
     <h2>Habilidades Técnicas</h2>
     <ul>
       <li>HTML5, CSS3, Sass</li>
@@ -91,44 +90,67 @@
       <li>Angular, React</li>
       <li>Git & GitHub</li>
       <li>Responsive Design</li>
-      <!-- Agrega más habilidades según lo necesites -->
     </ul>
   </section>
 
-  <!-- === TESTIMONIOS (OPCIONAL) === -->
-  <section id="testimonios" class="fade-in">
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" class="fade-in" tabindex="0" aria-label="Testimonios">
     <h2>Testimonios</h2>
-    <blockquote>
-      "Una persona comprometida, detallista y con gran habilidad para resolver problemas."
-      <cite>– Cliente satisfecho</cite>
-    </blockquote>
-    <!-- Puedes agregar más testimonios aquí -->
+    
+      <p>"Una persona comprometida, detallista y con gran habilidad para resolver problemas."</p>
+      <cite>Cliente satisfecho</cite>
+    
+    <!-- Más testimonios aquí -->
   </section>
 
-  <section id="contacto" class="fade-in">
+  <!-- CONTACTO -->
+  <section id="contacto" class="fade-in" tabindex="0" aria-label="Contacto">
     <h2>Contacto</h2>
     <p>Puedes contactarme a través de <a href="mailto:german.dev@gmail.com">german.dev@gmail.com</a></p>
 
-    <form action="enviar.php" method="post">
-      <div>
+    <form action="enviar.php" method="post" novalidate>
+      <div class="form-group">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required />
+        <input type="text" id="nombre" name="nombre" required autocomplete="name" />
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" required autocomplete="email" />
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
       </div>
 
-      <div>
+      <button type="button" id="btn-politica" aria-haspopup="dialog" aria-controls="modal-politica">Ver Política de Privacidad</button>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="consentimiento" name="consentimiento" required />
+        <label for="consentimiento">
+          He leído y acepto la <a href="#" id="link-politica">Política de Privacidad</a>.
+        </label>
+      </div>
+
+      <div class="form-group">
         <button type="submit">Enviar</button>
       </div>
     </form>
+
+    <!-- Modal Política de Privacidad -->
+    <section id="modal-politica" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-politica-titulo" hidden>
+      <div class="modal-content">
+        <button id="cerrar" class="cerrar" aria-label="Cerrar ventana">&times;</button>
+        <h3 id="modal-politica-titulo">Política de Privacidad</h3>
+        <p>
+          Los datos que proporciones en este formulario serán utilizados únicamente para responder tu consulta.
+          No se compartirán con terceros ni se almacenarán en ninguna base de datos externa.
+          Puedes solicitar la eliminación de tus datos en cualquier momento escribiéndome a
+          <a href="mailto:german.dev@gmail.com">german.dev@gmail.com</a>.
+        </p>
+      </div>
+    </section>
   </section>
 
   <footer>
