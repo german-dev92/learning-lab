@@ -4,14 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Landing Page Profesional - German Dev</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Portafolio profesional de German Dev: desarrollo web, ciencia de datos, y proyectos con inteligencia artificial." />
+  <meta name="keywords" content="German Dev, desarrollador web, ciencia de datos, IA, portafolio, frontend, machine learning" />
+  <meta name="author" content="German Dev" />
 
-  <!-- Fuentes -->
+  <title>German Dev</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/icon-sit.png" type="image/png" />
+
+  <!-- Preload de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Righteous&display=swap" rel="stylesheet" />
 
   <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 
 <body>
 
@@ -73,11 +84,21 @@
   <!-- PROYECTOS -->
   <section id="proyectos" class="fade-in" tabindex="0" aria-label="Proyectos">
     <h2>Proyectos</h2>
-    <article class="proyecto">
-      <h3>Nombre del Proyecto</h3>
-      <p>Descripción breve del proyecto, tecnologías usadas y el objetivo principal.</p>
-      <a href="https://link-al-proyecto.com" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-    </article>
+  <article class="proyecto">
+  <h3>Predicción de precios de Bitcoin con Machine Learning</h3>
+  <p>
+    Este proyecto aplica técnicas de ciencia de datos para predecir si el precio de Bitcoin subirá, utilizando datos obtenidos desde la API de <strong>CoinGecko</strong>. Se entrenaron modelos de clasificación como <strong>Decision Tree</strong> y <strong>Random Forest</strong>, con una precisión final del 93%.
+  </p>
+  <ul>
+    <li><strong>Tecnologías:</strong> Python, Pandas, scikit-learn, Matplotlib, API REST</li>
+    <li><strong>Modelo entrenado:</strong> Clasificación binaria con evaluación cruzada</li>
+    <li><strong>Resultado:</strong> Precisión promedio del 93%</li>
+  </ul>
+  <img src="images/bitocoin.png" alt="Gráfico precio de Bitcoin" style="width:100%; max-width:600px; margin-top:1rem;">
+
+  <a href="https://colab.research.google.com/drive/1todG_1NmKmO1LoxE6-CNbcDd_fThYQ6z?hl=es" target="_blank" rel="noopener noreferrer">Ver proyecto en Google Colab</a>
+</article>
+
     <!-- Repetir bloque de proyecto según sea necesario -->
   </section>
 
