@@ -1,3 +1,57 @@
+// Header - Hamburguesa //
+const toggleBtn = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('.main-nav ul');
+
+toggleBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+// Mostrar descripción al hacer clic en los botones
+const modal = document.getElementById('modal-proyecto');
+const modalTitle = document.getElementById('modal-titulo');
+const modalImg = document.getElementById('modal-img');
+const modalDesc = document.getElementById('modal-desc');
+const modalPdf = document.getElementById('modal-pdf');
+const closeModal = document.querySelector('.cerrar-modal');
+
+const projectData = {
+  1: {
+    title: 'Predicción de precios BTC',
+    img: 'images/bitcoin-proyecto.png',
+    desc: 'Proyecto de predicción de precios de Bitcoin con modelos de clasificación supervisada.',
+    pdf: 'pdfs/bitcoin-prediccion.pdf'
+  },
+  2: {
+    title: 'Análisis Cripto',
+    img: 'images/cripto-analisis.png',
+    desc: 'Exploración de datos del mercado cripto para encontrar patrones de inversión.',
+    pdf: 'pdfs/analisis-cripto.pdf'
+  },
+  // Agrega los demás
+};
+
+document.querySelectorAll('.project-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.project;
+    const data = projectData[id];
+
+    modalTitle.textContent = data.title;
+    modalImg.src = data.img;
+    modalDesc.textContent = data.desc;
+    modalPdf.href = data.pdf;
+
+    modal.removeAttribute('hidden');
+    modal.style.display = 'flex';
+  });
+});
+
+closeModal.addEventListener('click', () => {
+  modal.setAttribute('hidden', true);
+  modal.style.display = 'none';
+});
+
+
+
 // ===============================
 // Carrusel de imágenes en "Sobre mí"
 // ===============================

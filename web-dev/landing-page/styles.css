@@ -40,42 +40,91 @@ h3 {
 }
 
 /* === HEADER === */
-header {
-  background: var(--color-primary-dark);
-  padding: 10px;
-  text-align: center;
+/* === HEADER === */
+.site-header {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-header h1 {
+.container-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
   font-family: var(--font-title);
-  color: var(--color-white);
-  font-size: 3.7em;
-  letter-spacing: 5px;
-}
-
-/* === NAVIGATION === */
-nav ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: 10px 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
+  font-size: 1.3rem;
   color: var(--color-white);
   text-decoration: none;
-  font-family: var(--font-primary);
-  font-size: 1.5em;
-  transition: color 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
+/* Navegación */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  color: var(--color-white);
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
   color: var(--color-accent);
+}
+
+/* Hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .main-nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 1.5rem;
+    background: var(--color-primary-dark);
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+  }
+
+  .main-nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
 }
 
 /* === SECTIONS === */
@@ -117,6 +166,121 @@ section h2 {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+/* HERO / BIENVENIDA */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem; /* Reducido */
+  background: none;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Cuadrícula 2x2 a la izquierda */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.project-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Botones cuadrados */
+.project-btn {
+  background: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  padding: 1rem 1.2rem; /* rectángulo */
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px; /* rectángulo vertical fijo */
+}
+
+.project-btn .icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.project-btn .title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.project-btn:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(242, 201, 76, 0.3);
+}
+
+/* Imagen grande a la derecha */
+
+.hero-imagen img {
+  max-width: 450px;
+  height: auto;
+  object-fit: contain;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+/* Texto de saludo */
+.saludo h2 {
+  font-size: 1.8rem;
+  font-family: var(--font-title);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.saludo .color1 {
+  color: var(--color-primary);
+}
+
+.saludo .color2 {
+  color: var(--color-secondary-coral);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-imagen img {
+    max-width: 60%;
+    margin-top: 2rem;
+  }
 }
 
 /* === SOBRE MI === */
@@ -329,4 +493,13 @@ footer {
   #contacto button {
     font-size: 0.95rem;
   }
+}
+
+/* Anula estilos globales para la sección HERO */
+#hero {
+  background: none;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 2rem 1.5rem; /* restauramos espacio interno, especialmente horizontal */
 }

@@ -12,7 +12,7 @@
   <title>German Dev</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="images/icon-sit.png" type="image/png" />
+  <link rel="icon" href="images/logo-dem.png" type="image/png" />
 
   <!-- Preload de fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,12 +25,16 @@
 
 
 <body>
+  <!-- HEADER / NAVEGACION-->
 
-  <header>
-    <h1>German Dev</h1>
-    <nav aria-label="Navegación principal">
+<header class="site-header">
+  <div class="container-header">
+    <!-- Logo a la izquierda -->
+    <a href="#hero" class="logo">German Dev</a>
+
+    <!-- Menú de navegación -->
+    <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
       <ul>
-        <li><a href="#hero">Inicio</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
@@ -39,19 +43,52 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-  </header>
+
+    <!-- Menú hamburguesa para móvil -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
 
   <!-- HERO / BIENVENIDA -->
-  <section id="hero" class="fade-in" tabindex="0" aria-label="Sección de bienvenida">
-    <h2>Hola, soy German</h2>
-    <p>
-      Apasionado por la tecnología, combino el desarrollo web con la ciencia de datos para crear proyectos
-      funcionales y con propósito. Este portafolio refleja mi compromiso con el aprendizaje constante, la
-      integración de inteligencia artificial en soluciones reales y la mejora continua como profesional del
-      mundo digital.
-    </p>
-    <a href="#contacto" class="btn">Hablemos</a>
-  </section>
+<section id="hero" class="hero-section">
+  <div class="hero-content">
+    <div class="saludo">
+      <h2><span class="color1">Hola,</span> <span class="color2">soy German,</span> <span class="color1">creo con datos y código.</span></h2>
+    </div>
+
+<div class="hero-grid">
+  
+    <div class="project-buttons">
+      <button class="project-btn">
+        <span class="icon">📊</span>
+        <span class="title">Predicción BTC</span>
+      </button>
+      <button class="project-btn">
+        <span class="icon">📈</span>
+        <span class="title">Análisis Cripto</span>
+      </button>
+      <button class="project-btn">
+        <span class="icon">🧠</span>
+        <span class="title">Clasificador IA</span>
+      </button>
+      <button class="project-btn">
+        <span class="icon">📉</span>
+        <span class="title">Modelado Financiero</span>
+      </button>
+    </div>
+
+    <!-- Imagen del logo a la derecha -->
+    <div class="hero-imagen">
+      <img src="images/logo-dem.png" alt="Logo German Dev">
+    </div>
+  </div>
+</section>
+
 
   <!-- SOBRE MÍ -->
   <section id="sobre-mi" class="fade-in" tabindex="0" aria-label="Sobre mí">
@@ -173,6 +210,17 @@
       </div>
     </section>
   </section>
+  
+  <div id="modal-proyecto" class="modal" hidden>
+  <div class="modal-content">
+    <button class="cerrar-modal" aria-label="Cerrar">&times;</button>
+    <h3 id="modal-titulo">Título del Proyecto</h3>
+    <img id="modal-img" src="" alt="Imagen del proyecto" style="max-width: 100%; margin: 1rem 0;">
+    <p id="modal-desc">Descripción del proyecto aquí...</p>
+    <a id="modal-pdf" href="#" download class="btn">Descargar Informe PDF</a>
+  </div>
+</div>
+
 
   <footer>
     <p>&copy; 2023 German Dev. Todos los derechos reservados.</p>
