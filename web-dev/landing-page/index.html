@@ -5,8 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Portafolio profesional de German Dev: desarrollo web, ciencia de datos, y proyectos con inteligencia artificial." />
-  <meta name="keywords" content="German Dev, desarrollador web, ciencia de datos, IA, portafolio, frontend, machine learning" />
+  <meta name="description"
+    content="Portafolio profesional de German Dev: desarrollo web, ciencia de datos, y proyectos con inteligencia artificial." />
+  <meta name="keywords"
+    content="German Dev, desarrollador web, ciencia de datos, IA, portafolio, frontend, machine learning" />
   <meta name="author" content="German Dev" />
 
   <title>German Dev</title>
@@ -23,90 +25,111 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-
 <body>
   <!-- HEADER / NAVEGACION-->
 
-<header class="site-header">
-  <div class="container-header">
-    <!-- Logo a la izquierda -->
-    <a href="#hero" class="logo">German Dev</a>
+  <header class="site-header">
+    <div class="container-header">
+      <!-- Logo a la izquierda -->
+      <a href="#hero" class="logo">German Dev</a>
 
-    <!-- Menú de navegación -->
-    <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
-      <ul>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+      <!-- Menú de navegación -->
+      <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-    <!-- Menú hamburguesa para móvil -->
-    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
+      <!-- Menú hamburguesa para móvil -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
   <!-- HERO / BIENVENIDA -->
-<section id="hero" class="hero-section">
-  <div class="hero-content">
-    <div class="saludo">
-      <h2><span class="color1">Hola,</span> <span class="color2">soy German,</span> <span class="color1">creo con datos y código.</span></h2>
-    </div>
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <!-- Columna izquierda -->
+      <div class="hero-left">
+        <div class="saludo">
+          <h2>
+            <span class="color1">Transformo datos</span>,
+            <span class="color2">diseño soluciones</span>,
+            <span class="color1">y desarrollo con propósito.</span>
+          </h2>
 
-<div class="hero-grid">
-  
-    <div class="project-buttons">
-      <button class="project-btn">
-        <span class="icon">📊</span>
-        <span class="title">Predicción BTC</span>
-      </button>
-      <button class="project-btn">
-        <span class="icon">📈</span>
-        <span class="title">Análisis Cripto</span>
-      </button>
-      <button class="project-btn">
-        <span class="icon">🧠</span>
-        <span class="title">Clasificador IA</span>
-      </button>
-      <button class="project-btn">
-        <span class="icon">📉</span>
-        <span class="title">Modelado Financiero</span>
-      </button>
-    </div>
+        </div>
 
-    <!-- Imagen del logo a la derecha -->
-    <div class="hero-imagen">
-      <img src="images/logo-dem.png" alt="Logo German Dev">
-    </div>
-  </div>
-</section>
+        <p class="descripcion">
+          Hola! Me llamo German, soy Desarrollador web y científico de datos, combino machine learning y desarrollo web
+          para crear soluciones prácticas e intuitivas. Aquí algunos ejemplos que lo demuestran:
+        </p>
 
-
-  <!-- SOBRE MÍ -->
-  <section id="sobre-mi" class="fade-in" tabindex="0" aria-label="Sobre mí">
-    <div class="container">
-      <div class="carousel" aria-roledescription="carousel">
-        <img src="images/ft1.jpeg" alt="Foto 1" class="carousel-image active" />
-        <img src="images/ft2.jpeg" alt="Foto 2" class="carousel-image" />
-        <img src="images/ft3.jpeg" alt="Foto 3" class="carousel-image" />
+        <div class="project-buttons">
+          <button class="project-btn" data-project="1">
+            <span class="icon">📊</span>
+            <span class="title">Predicción BTC</span>
+          </button>
+          <button class="project-btn" data-project="2">
+            <span class="icon">📈</span>
+            <span class="title">Análisis Cripto</span>
+          </button>
+          <button class="project-btn" data-project="3">
+            <span class="icon">🧠</span>
+            <span class="title">Clasificador IA</span>
+          </button>
+          <button class="project-btn" data-project="4">
+            <span class="icon">📉</span>
+            <span class="title">Modelado Financiero</span>
+          </button>
+        </div>
       </div>
 
-      <div class="bio">
-        <h2>Sobre mí</h2>
-        <p>
-          ¡Hola! Soy German, desarrollador web y científico de datos con un fuerte interés por la inteligencia artificial y las tecnologías emergentes. Me apasiona construir soluciones eficientes y creativas, manteniéndome al día con las tendencias del sector. Este portafolio refleja mi compromiso por crecer constantemente, compartir lo que aprendo y aplicar mis conocimientos en proyectos reales que aporten valor.
-        </p>
+      <!-- Columna derecha -->
+      <div class="hero-right">
+        <img src="images/logo-dem.png" alt="Logo German Dev" />
       </div>
     </div>
   </section>
+
+  <!-- === SOBRE MÍ === -->
+  <section id="sobre-mi" tabindex="0" aria-label="Sobre mí">
+    <div class="carousel" aria-roledescription="carousel">
+      <img src="images/ft1.jpeg" alt="Foto 1" class="carousel-image active" />
+      <img src="images/ft2.jpeg" alt="Foto 2" class="carousel-image" />
+      <img src="images/ft3.jpeg" alt="Foto 3" class="carousel-image" />
+    </div>
+
+    <div class="bio">
+      <h2>Sobre mí</h2>
+      <p class="descripcion">
+        Soy German Velásquez, desarrollador web y científico de datos con formación técnica en programación y un Máster
+        en Big Data & Data Science por la Universidad Autónoma de Madrid (2025). Actualmente resido en Madrid, donde
+        busco integrarme al mercado laboral con una mentalidad orientada al aprendizaje continuo y la innovación.
+
+        Mi trayectoria une la experiencia en desarrollo web con un sólido enfoque en el análisis de datos, modelos
+        predictivos y herramientas de inteligencia artificial. Me apasiona transformar datos en soluciones prácticas y
+        crear productos digitales con impacto real.
+
+        Uno de mis mayores logros ha sido el desarrollo de mi tesis de máster, un estudio sobre la evolución del consumo
+        de petróleo en España, con enfoque predictivo y visión estratégica para el futuro energético del país.
+
+        Hoy continúo fortaleciendo mis habilidades técnicas, incorporando nuevas tecnologías web e inteligencia
+        artificial a mis proyectos, y preparándome para aportar valor a equipos multidisciplinarios e iniciativas con
+        propósito.
+      </p>
+    </div>
+  </section>
+
+
 
   <!-- SERVICIOS -->
   <section id="servicios" class="fade-in" tabindex="0" aria-label="Servicios ofrecidos">
@@ -121,20 +144,24 @@
   <!-- PROYECTOS -->
   <section id="proyectos" class="fade-in" tabindex="0" aria-label="Proyectos">
     <h2>Proyectos</h2>
-  <article class="proyecto">
-  <h3>Predicción de precios de Bitcoin con Machine Learning</h3>
-  <p>
-    Este proyecto aplica técnicas de ciencia de datos para predecir si el precio de Bitcoin subirá, utilizando datos obtenidos desde la API de <strong>CoinGecko</strong>. Se entrenaron modelos de clasificación como <strong>Decision Tree</strong> y <strong>Random Forest</strong>, con una precisión final del 93%.
-  </p>
-  <ul>
-    <li><strong>Tecnologías:</strong> Python, Pandas, scikit-learn, Matplotlib, API REST</li>
-    <li><strong>Modelo entrenado:</strong> Clasificación binaria con evaluación cruzada</li>
-    <li><strong>Resultado:</strong> Precisión promedio del 93%</li>
-  </ul>
-  <img src="images/bitocoin.png" alt="Gráfico precio de Bitcoin" style="width:100%; max-width:600px; margin-top:1rem;">
+    <article class="proyecto">
+      <h3>Predicción de precios de Bitcoin con Machine Learning</h3>
+      <p>
+        Este proyecto aplica técnicas de ciencia de datos para predecir si el precio de Bitcoin subirá, utilizando datos
+        obtenidos desde la API de <strong>CoinGecko</strong>. Se entrenaron modelos de clasificación como
+        <strong>Decision Tree</strong> y <strong>Random Forest</strong>, con una precisión final del 93%.
+      </p>
+      <ul>
+        <li><strong>Tecnologías:</strong> Python, Pandas, scikit-learn, Matplotlib, API REST</li>
+        <li><strong>Modelo entrenado:</strong> Clasificación binaria con evaluación cruzada</li>
+        <li><strong>Resultado:</strong> Precisión promedio del 93%</li>
+      </ul>
+      <img src="images/bitocoin.png" alt="Gráfico precio de Bitcoin"
+        style="width:100%; max-width:600px; margin-top:1rem;">
 
-  <a href="https://colab.research.google.com/drive/1todG_1NmKmO1LoxE6-CNbcDd_fThYQ6z?hl=es" target="_blank" rel="noopener noreferrer">Ver proyecto en Google Colab</a>
-</article>
+      <a href="https://colab.research.google.com/drive/1todG_1NmKmO1LoxE6-CNbcDd_fThYQ6z?hl=es" target="_blank"
+        rel="noopener noreferrer">Ver proyecto en Google Colab</a>
+    </article>
 
     <!-- Repetir bloque de proyecto según sea necesario -->
   </section>
@@ -154,10 +181,10 @@
   <!-- TESTIMONIOS -->
   <section id="testimonios" class="fade-in" tabindex="0" aria-label="Testimonios">
     <h2>Testimonios</h2>
-    
-      <p>"Una persona comprometida, detallista y con gran habilidad para resolver problemas."</p>
-      <cite>Cliente satisfecho</cite>
-    
+
+    <p>"Una persona comprometida, detallista y con gran habilidad para resolver problemas."</p>
+    <cite>Cliente satisfecho</cite>
+
     <!-- Más testimonios aquí -->
   </section>
 
@@ -182,7 +209,8 @@
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
       </div>
 
-      <button type="button" id="btn-politica" aria-haspopup="dialog" aria-controls="modal-politica">Ver Política de Privacidad</button>
+      <button type="button" id="btn-politica" aria-haspopup="dialog" aria-controls="modal-politica">Ver Política de
+        Privacidad</button>
 
       <div class="form-group checkbox-group">
         <input type="checkbox" id="consentimiento" name="consentimiento" required />
@@ -197,7 +225,8 @@
     </form>
 
     <!-- Modal Política de Privacidad -->
-    <section id="modal-politica" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-politica-titulo" hidden>
+    <section id="modal-politica" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-politica-titulo"
+      hidden>
       <div class="modal-content">
         <button id="cerrar" class="cerrar" aria-label="Cerrar ventana">&times;</button>
         <h3 id="modal-politica-titulo">Política de Privacidad</h3>
@@ -210,16 +239,16 @@
       </div>
     </section>
   </section>
-  
+
   <div id="modal-proyecto" class="modal" hidden>
-  <div class="modal-content">
-    <button class="cerrar-modal" aria-label="Cerrar">&times;</button>
-    <h3 id="modal-titulo">Título del Proyecto</h3>
-    <img id="modal-img" src="" alt="Imagen del proyecto" style="max-width: 100%; margin: 1rem 0;">
-    <p id="modal-desc">Descripción del proyecto aquí...</p>
-    <a id="modal-pdf" href="#" download class="btn">Descargar Informe PDF</a>
+    <div class="modal-content">
+      <button class="cerrar-modal" aria-label="Cerrar">&times;</button>
+      <h3 id="modal-titulo">Título del Proyecto</h3>
+      <img id="modal-img" src="" alt="Imagen del proyecto" style="max-width: 100%; margin: 1rem 0;">
+      <p id="modal-desc">Descripción del proyecto aquí...</p>
+      <a id="modal-pdf" href="#" download class="btn">Descargar Informe PDF</a>
+    </div>
   </div>
-</div>
 
 
   <footer>

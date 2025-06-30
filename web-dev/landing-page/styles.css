@@ -167,89 +167,39 @@ section h2 {
   opacity: 1;
   transform: translateY(0);
 }
-/* HERO / BIENVENIDA */
+
+/* === HERO / BIENVENIDA === */
 .hero-section {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 1rem; /* Reducido */
+  padding-block: 2rem 1rem;
+  margin-top: 0;
+  scroll-margin-top: 80px;
   background: none;
+  overflow: hidden;
+  /* evita que elementos desborden */
 }
 
-.hero-content {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Cuadrícula 2x2 a la izquierda */
-.hero-grid {
+.hero-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: minmax(400px, 1.8fr) minmax(280px, 1fr);
   align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
-.project-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
-  max-width: 600px;
-  width: 100%;
-}
-
-/* Botones cuadrados */
-.project-btn {
-  background: var(--color-white);
-  border: 2px solid var(--color-primary);
-  border-radius: 10px;
-  padding: 1rem 1.2rem; /* rectángulo */
-  box-shadow: var(--box-shadow);
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.3s ease-in-out;
-  font-family: var(--font-primary);
+.hero-left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100px; /* rectángulo vertical fijo */
+  gap: 1.2rem;
 }
 
-.project-btn .icon {
-  font-size: 1.3rem;
-  margin-bottom: 0.3rem;
-}
-
-.project-btn .title {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--color-primary);
-}
-
-.project-btn:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(242, 201, 76, 0.3);
-}
-
-/* Imagen grande a la derecha */
-
-.hero-imagen img {
-  max-width: 450px;
-  height: auto;
-  object-fit: contain;
-  border: none;
-  box-shadow: none;
-  background: none;
-}
-
-/* Texto de saludo */
 .saludo h2 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-family: var(--font-title);
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-top: 0;
 }
 
 .saludo .color1 {
@@ -260,63 +210,120 @@ section h2 {
   color: var(--color-secondary-coral);
 }
 
-/* Responsive */
+.descripcion {
+  font-size: 1.1rem;
+  color: var(--color-subtext);
+  font-family: var(--font-primary);
+}
+
+.project-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-btn {
+  background: var(--color-white);
+  border: 1px solid var(--color-primary);
+  /* borde fino */
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* sombra sutil */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+  cursor: pointer;
+  min-height: 120px;
+}
+
+.project-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 16px rgba(242, 201, 76, 0.25);
+  /* sombra dorada */
+  color: var(--color-primary-dark);
+}
+
+.project-btn .icon {
+  font-size: 1.7rem;
+}
+
+.project-btn .title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-right img {
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  border: none;
+  box-shadow: none;
+  margin: 0 auto;
+  display: block;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
+  .hero-container {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-grid {
-    flex-direction: column;
-    align-items: center;
+  .hero-right {
+    margin-top: 2rem;
   }
 
   .project-buttons {
     grid-template-columns: 1fr 1fr;
   }
 
-  .hero-imagen img {
-    max-width: 60%;
-    margin-top: 2rem;
+  .saludo h2 {
+    font-size: 2rem;
   }
 }
 
-/* === SOBRE MI === */
+/* === SOBRE MÍ === */
 #sobre-mi {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 40px 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr; /* Menos espacio para la imagen, más para la bio */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
   background-color: #fff;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border-radius: 0;
+  min-height: 360px; /* Compacta en altura */
+  align-items: stretch; /* 👉 fuerza que ambas columnas se estiren a la misma altura */
 }
 
-#sobre-mi .container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1200px;
-}
-
+/* Carrusel optimizado */
 .carousel {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 100%;
+  height: 100%; /* 👉 ocupa toda la altura de su celda */
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-image {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100%; /* 👉 ocupa todo el espacio vertical */
+  object-fit: cover; /* 👉 cubre sin deformar */
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -325,21 +332,50 @@ section h2 {
   opacity: 1;
 }
 
+/* Bio clara y balanceada */
 .bio {
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1.5rem;
 }
 
 .bio h2 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .bio p {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: var(--color-subtext);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  #sobre-mi {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel {
+    height: 300px;
+  }
+
+  .bio {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .bio h2 {
+    font-size: 1.7rem;
+  }
+
+  .bio p {
+    font-size: 1rem;
+  }
+}
+
 
 /* === FORMULARIO DE CONTACTO === */
 #contacto {
@@ -501,5 +537,6 @@ footer {
   margin: 0;
   border-radius: 0;
   box-shadow: none;
-  padding: 2rem 1.5rem; /* restauramos espacio interno, especialmente horizontal */
+  padding: 2rem 1.5rem;
+  /* restauramos espacio interno, especialmente horizontal */
 }
