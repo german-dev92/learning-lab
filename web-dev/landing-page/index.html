@@ -12,7 +12,7 @@
   <meta name="author" content="German Dev" />
 
   <title>German Dev</title>
-
+ 
   <!-- Favicon -->
   <link rel="icon" href="images/logo-dem.png" type="image/png" />
 
@@ -55,14 +55,14 @@
   </header>
 
   <!-- HERO / BIENVENIDA -->
-  <section id="hero" class="hero-section">
+  <section id="hero" class="hero-section reveal">
     <div class="hero-container">
       <!-- Columna izquierda -->
       <div class="hero-left">
         <div class="saludo">
           <h2>
             <span class="color1">Transformo datos</span>,
-            <span class="color2">diseño soluciones</span>,
+            <span class="color2">diseño soluciones,</span>
             <span class="color1">y desarrollo con propósito.</span>
           </h2>
 
@@ -95,44 +95,49 @@
 
       <!-- Columna derecha -->
       <div class="hero-right">
-        <img src="images/logo-dem.png" alt="Logo German Dev" />
+        <img src="images/logo-dem.png" alt="Logo German Dev" aria-hidden="true" />
       </div>
     </div>
   </section>
 
   <!-- === SOBRE MÍ === -->
-  <section id="sobre-mi" tabindex="0" aria-label="Sobre mí">
-    <div class="carousel" aria-roledescription="carousel">
-      <img src="images/ft1.jpeg" alt="Foto 1" class="carousel-image active" />
-      <img src="images/ft2.jpeg" alt="Foto 2" class="carousel-image" />
-      <img src="images/ft3.jpeg" alt="Foto 3" class="carousel-image" />
+<section id="sobre-mi" class="sobre-mi-section" tabindex="0" aria-label="Sobre mí">
+  <div class="sobre-mi-grid">
+    <!-- Carrusel de imágenes -->
+    <div class="carousel" aria-roledescription="Carrusel de imágenes">
+      <img src="images/ft1.jpeg" alt="Foto 1 de German" class="carousel-image active" />
+      <img src="images/ft2.jpeg" alt="Foto 2 de German" class="carousel-image" />
+      <img src="images/ft3.jpeg" alt="Foto 3 de German" class="carousel-image" />
     </div>
 
+    <!-- Biografía -->
     <div class="bio">
       <h2>Sobre mí</h2>
       <p class="descripcion">
         Soy German Velásquez, desarrollador web y científico de datos con formación técnica en programación y un Máster
         en Big Data & Data Science por la Universidad Autónoma de Madrid (2025). Actualmente resido en Madrid, donde
         busco integrarme al mercado laboral con una mentalidad orientada al aprendizaje continuo y la innovación.
-
+      </p>
+      <p class="descripcion">
         Mi trayectoria une la experiencia en desarrollo web con un sólido enfoque en el análisis de datos, modelos
         predictivos y herramientas de inteligencia artificial. Me apasiona transformar datos en soluciones prácticas y
         crear productos digitales con impacto real.
-
+      </p>
+      <p class="descripcion">
         Uno de mis mayores logros ha sido el desarrollo de mi tesis de máster, un estudio sobre la evolución del consumo
         de petróleo en España, con enfoque predictivo y visión estratégica para el futuro energético del país.
-
+      </p>
+      <p class="descripcion">
         Hoy continúo fortaleciendo mis habilidades técnicas, incorporando nuevas tecnologías web e inteligencia
         artificial a mis proyectos, y preparándome para aportar valor a equipos multidisciplinarios e iniciativas con
         propósito.
       </p>
     </div>
-  </section>
-
-
+  </div>
+</section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" class="fade-in" tabindex="0" aria-label="Servicios ofrecidos">
+  <section id="servicios" class="reveal" tabindex="0" aria-label="Servicios ofrecidos">
     <h2>Servicios</h2>
     <ul>
       <li>Desarrollo de sitios web</li>
@@ -142,7 +147,7 @@
   </section>
 
   <!-- PROYECTOS -->
-  <section id="proyectos" class="fade-in" tabindex="0" aria-label="Proyectos">
+  <section id="proyectos" class="reveal" tabindex="0" aria-label="Proyectos">
     <h2>Proyectos</h2>
     <article class="proyecto">
       <h3>Predicción de precios de Bitcoin con Machine Learning</h3>
@@ -167,7 +172,7 @@
   </section>
 
   <!-- HABILIDADES -->
-  <section id="habilidades" class="fade-in" tabindex="0" aria-label="Habilidades técnicas">
+  <section id="habilidades" class="reveal" tabindex="0" aria-label="Habilidades técnicas">
     <h2>Habilidades Técnicas</h2>
     <ul>
       <li>HTML5, CSS3, Sass</li>
@@ -178,66 +183,66 @@
     </ul>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section id="testimonios" class="fade-in" tabindex="0" aria-label="Testimonios">
-    <h2>Testimonios</h2>
+  <!-- TESTIMONIOS/ CONTACTO -->
+  <section id="testimonios-contacto" class="seccion-doble">
+    <div class="testimonios-box">
+      <h2>Testimonios</h2>
+      <p>"Una persona comprometida, detallista y con gran habilidad para resolver problemas."</p>
+      <cite>Cliente satisfecho</cite>
+    </div>
 
-    <p>"Una persona comprometida, detallista y con gran habilidad para resolver problemas."</p>
-    <cite>Cliente satisfecho</cite>
+    <div id="contacto" class="contacto-box">
+      <h2>Contacto</h2>
+     <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? Puedes escribirme a <a class="mailto" href="mailto:german.dev@gmail.com">german.dev@gmail.com</a> o completar el siguiente formulario. ¡Estaré encantado de leerte!</p>
 
-    <!-- Más testimonios aquí -->
+
+      <form action="enviar.php" method="post" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+
+        <button type="button" id="btn-politica" aria-haspopup="dialog" aria-controls="modal-politica">Ver Política de
+          Privacidad</button>
+
+        <div class="form-group alineado-checkbox">
+          <input type="checkbox" id="consentimiento" name="consentimiento" required />
+          <label for="consentimiento">
+            He leído y acepto la <a href="#">Política de Privacidad</a>.
+          </label>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="fade-in" tabindex="0" aria-label="Contacto">
-    <h2>Contacto</h2>
-    <p>Puedes contactarme a través de <a href="mailto:german.dev@gmail.com">german.dev@gmail.com</a></p>
-
-    <form action="enviar.php" method="post" novalidate>
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required autocomplete="name" />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required autocomplete="email" />
-      </div>
-
-      <div class="form-group">
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-      </div>
-
-      <button type="button" id="btn-politica" aria-haspopup="dialog" aria-controls="modal-politica">Ver Política de
-        Privacidad</button>
-
-      <div class="form-group checkbox-group">
-        <input type="checkbox" id="consentimiento" name="consentimiento" required />
-        <label for="consentimiento">
-          He leído y acepto la <a href="#" id="link-politica">Política de Privacidad</a>.
-        </label>
-      </div>
-
-      <div class="form-group">
-        <button type="submit">Enviar</button>
-      </div>
-    </form>
-
-    <!-- Modal Política de Privacidad -->
-    <section id="modal-politica" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-politica-titulo"
-      hidden>
-      <div class="modal-content">
-        <button id="cerrar" class="cerrar" aria-label="Cerrar ventana">&times;</button>
-        <h3 id="modal-politica-titulo">Política de Privacidad</h3>
-        <p>
-          Los datos que proporciones en este formulario serán utilizados únicamente para responder tu consulta.
-          No se compartirán con terceros ni se almacenarán en ninguna base de datos externa.
-          Puedes solicitar la eliminación de tus datos en cualquier momento escribiéndome a
-          <a href="mailto:german.dev@gmail.com">german.dev@gmail.com</a>.
-        </p>
-      </div>
-    </section>
+  <!-- Modal Política de Privacidad -->
+  <section id="modal-politica" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-politica-titulo"
+    hidden>
+    <div class="modal-content">
+      <button id="cerrar" class="cerrar" aria-label="Cerrar ventana">&times;</button>
+      <h3 id="modal-politica-titulo">Política de Privacidad</h3>
+      <p>
+        Los datos que proporciones en este formulario serán utilizados únicamente para responder tu consulta.
+        No se compartirán con terceros ni se almacenarán en ninguna base de datos externa.
+        Puedes solicitar la eliminación de tus datos en cualquier momento escribiéndome a
+        <a href="mailto:german.dev@gmail.com">german.dev@gmail.com</a>.
+      </p>
+    </div>
+  </section>
   </section>
 
   <div id="modal-proyecto" class="modal" hidden>
