@@ -61,50 +61,50 @@
   </header>
 
   <!-- HERO / BIENVENIDA -->
-  <section id="hero" class="hero-section reveal">
-    <div class="hero-container">
-      <!-- Columna izquierda -->
-      <div class="hero-left">
-        <div class="saludo">
-          <h2>
-            <span class="color1">Transformo datos</span>,
-            <span class="color2">diseño soluciones,</span>
-            <span class="color1">y desarrollo con propósito.</span>
-          </h2>
-
-        </div>
-
-        <p class="descripcion">
-          Hola! Me llamo German, soy Desarrollador web y científico de datos, combino machine learning y desarrollo web
-          para crear soluciones prácticas e intuitivas. Aquí algunos ejemplos que lo demuestran:
-        </p>
-
-        <div class="project-buttons">
-          <button class="project-btn" data-project="1">
-            <span class="icon">📊</span>
-            <span class="title">Predicción BTC</span>
-          </button>
-          <button class="project-btn" data-project="2">
-            <span class="icon">📈</span>
-            <span class="title">Análisis Cripto</span>
-          </button>
-          <button class="project-btn" data-project="3">
-            <span class="icon">🧠</span>
-            <span class="title">Clasificador IA</span>
-          </button>
-          <button class="project-btn" data-project="4">
-            <span class="icon">📉</span>
-            <span class="title">Modelado Financiero</span>
-          </button>
-        </div>
+<section id="hero" class="hero-section reveal">
+  <div class="hero-container">
+    <!-- Columna izquierda -->
+    <div class="hero-left">
+      <div class="saludo">
+        <h2>
+          <span class="color1">Transformo datos</span>,
+          <span class="color2">diseño soluciones,</span>
+          <span class="color1">y desarrollo con propósito.</span>
+        </h2>
       </div>
 
-      <!-- Columna derecha -->
-      <div class="hero-right">
-        <img src="images/logo-dem.png" alt="Logo German Dev" aria-hidden="true" />
+      <p class="descripcion">
+        Hola! Me llamo German, soy Desarrollador web y científico de datos, combino machine learning y desarrollo web
+        para crear soluciones prácticas e intuitivas. Aquí algunos ejemplos que lo demuestran:
+      </p>
+
+      <div class="project-buttons">
+        <button class="project-btn" data-project="1">
+          <img src="images/icons/bitcoin.png" alt="BTC Icono" class="icon-img" />
+          <span class="title">Predicción BTC</span>
+        </button>
+        <button class="project-btn" data-project="2">
+          <img src="images/icons/hotel.png" alt="Opiniones Icono" class="icon-img" />
+          <span class="title">Opiniones Hoteles</span>
+        </button>
+        <button class="project-btn" data-project="3">
+          <img src="images/icons/vivienda-social.png" alt="Vivienda Icono" class="icon-img" />
+          <span class="title">Análisis Vivienda</span>
+        </button>
+        <button class="project-btn" data-project="4">
+          <img src="images/icons/barril-de-petroleo.png" alt="TFM Icono" class="icon-img" />
+          <span class="title">TFM Clasificador</span>
+        </button>
       </div>
     </div>
-  </section>
+
+    <!-- Columna derecha -->
+    <div class="hero-right">
+      <img src="images/logo-dem.png" alt="Logo German Dev" aria-hidden="true" />
+    </div>
+  </div>
+</section>
+
 
   <!-- === SOBRE MÍ === -->
   <section id="sobre-mi" class="sobre-mi-section" tabindex="0" aria-label="Sobre mí">
@@ -145,14 +145,27 @@
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" class="reveal" tabindex="0" aria-label="Servicios ofrecidos">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Desarrollo de sitios web</li>
-      <li>Optimización de motores de búsqueda</li>
-      <li>Asesoramiento en diseño web</li>
-    </ul>
-  </section>
+ <section id="servicios" class="reveal" tabindex="0" aria-label="Servicios ofrecidos">
+  <h2>Servicios</h2>
+  <div class="servicios-grid">
+    <div class="servicio-card">
+      <div class="icono"><i class="fas fa-code"></i></div>
+      <h3>Desarrollo Web</h3>
+      <p>Diseño y desarrollo de sitios modernos, responsivos y optimizados para rendimiento y experiencia de usuario.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="icono"><i class="fas fa-search"></i></div>
+      <h3>SEO</h3>
+      <p>Optimización de motores de búsqueda para mejorar tu visibilidad y atraer tráfico de calidad.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="icono"><i class="fas fa-lightbulb"></i></div>
+      <h3>Asesoría UX/UI</h3>
+      <p>Consejos estratégicos de diseño centrado en el usuario, accesibilidad y coherencia visual.</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- SECCIÓN PROYECTOS COMO CARRUSEL -->
   <section class="proyectos-carrusel reveal">
@@ -212,17 +225,35 @@
     </div>
   </section>
 
-  <!-- HABILIDADES -->
-  <section id="habilidades" class="reveal" tabindex="0" aria-label="Habilidades técnicas">
-    <h2>Habilidades Técnicas</h2>
-    <ul>
-      <li>HTML5, CSS3, Sass</li>
-      <li>JavaScript, TypeScript</li>
-      <li>Angular, React</li>
-      <li>Git & GitHub</li>
-      <li>Responsive Design</li>
-    </ul>
-  </section>
+ <section id="habilidades" class="reveal habilidades-seccion" aria-label="Habilidades técnicas">
+  <h2>Habilidades Técnicas</h2>
+  <div class="habilidades-grid">
+    <div class="habilidad-icono" data-habilidad="HTML5" data-nivel="Avanzado">
+      <img src="images/icons/html5.png" alt="HTML5">
+    </div>
+    <div class="habilidad-icono" data-habilidad="CSS3" data-nivel="Avanzado">
+      <img src="images/icons/css3.png" alt="CSS3">
+    </div>
+    <div class="habilidad-icono" data-habilidad="JavaScript" data-nivel="Avanzado">
+      <img src="images/icons/js.png" alt="JavaScript">
+    </div>
+    <div class="habilidad-icono" data-habilidad="React" data-nivel="Intermedio">
+      <img src="images/icons/images.png" alt="React">
+    </div>
+    <div class="habilidad-icono" data-habilidad="Git" data-nivel="Avanzado">
+      <img src="images/icons/git.png" alt="Git">
+    </div>
+    
+    <!-- Agrega más aquí -->
+  </div>
+
+  <!-- Modal flotante -->
+  <div class="habilidad-modal" id="habilidad-modal">
+    <p id="modal-habilidad"></p>
+    <span id="modal-nivel"></span>
+  </div>
+</section>
+
 
   <!-- TESTIMONIOS/ CONTACTO -->
   <section id="testimonios-contacto" class="seccion-doble">
