@@ -9,59 +9,98 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // === HERO: BOTONES PROYECTO - MODAL ===
-const modal = document.getElementById('modal-proyecto');
-const modalTitle = document.getElementById('modal-titulo');
-const modalImg = document.getElementById('modal-img');
-const modalDesc = document.getElementById('modal-desc');
-const modalPdf = document.getElementById('modal-pdf');
-const closeModal = document.querySelector('.cerrar-modal');
+  const modal = document.getElementById('modal-proyecto');
+  const modalTitle = document.getElementById('modal-titulo');
+  const modalImg = document.getElementById('modal-img');
+  const modalDesc = document.getElementById('modal-desc');
+  const modalPdf = document.getElementById('modal-pdf');
+  const closeModal = document.querySelector('.cerrar-modal');
 
-const projectData = {
-  1: {
-    title: 'Predicción de precios BTC',
-    img: 'images/bitocoin.png',
-    desc: 'Desarrollar un sistema capaz de predecir si el precio de una criptomoneda aumentará o disminuirá en las próximas 24 horas, utilizando datos de mercado en tiempo real. Como caso de estudio se utilizó Bitcoin, aunque el modelo se entrenó con datos de las 100 criptomonedas principales según su capitalización.',
-    pdf: 'pdf/informe_bitcoin.pdf'
-  },
-  2: {
-    title: 'Clasificación Automática de Opiniones Hoteleras',
-    img: 'images/booking.png',
-    desc: 'Desarrollar un modelo automático de clasificación que determine si una crítica hotelera es favorable o desfavorable, utilizando reseñas de Booking.com como fuente de datos. Dado el desbalance en las clases (mayoría de críticas positivas), se priorizó el uso de métricas como ROC AUC en lugar de accuracy.',
-    pdf: 'pdf/booking.pdf'
-  },
-  3: {
-    title: 'Análisis de Destino Residencial en Edificios de la Comunidad de Madrid',
-    img: 'images/viviendasmadrid.png',
-    desc: 'Analizar la proporción de edificios destinados principalmente a viviendas familiares en la Comunidad de Madrid, usando datos censales oficiales del año 2001. El objetivo es identificar patrones territoriales, detectar zonas con baja presencia residencial y extraer oportunidades de acción pública o privada.',
-    pdf: 'pdf/VIVIENDAS_MADRID.pdf'
-  },
-  4: {
-    title: 'TFM German Velasquez UAM',
-    img: 'images/tfm.png',
-    desc: 'Este Trabajo Fin de Máster se centra en el análisis del consumo de productos petrolíferos en las comunidades autónomas de España entre 2020 y 2024, con el objetivo de identificar patrones de consumo y proyectar tendencias hasta 2026. En el marco de la transición energética y las políticas públicas, se ha utilizado una combinación de técnicas de análisis de datos, segmentación y modelado predictivo para explorar cómo podría evolucionar la demanda de combustibles fósiles en los próximos años.',
-    pdf: 'pdf/TFM-GV.pdf'
-  }
-};
+  const projectData = {
+    1: {
+      title: 'Predicción de precios BTC',
+      img: 'images/bitocoin.png',
+      desc: 'Desarrollar un sistema capaz de predecir si el precio de una criptomoneda aumentará o disminuirá en las próximas 24 horas, utilizando datos de mercado en tiempo real. Como caso de estudio se utilizó Bitcoin, aunque el modelo se entrenó con datos de las 100 criptomonedas principales según su capitalización.',
+      pdf: 'pdf/informe_bitcoin.pdf'
+    },
+    2: {
+      title: 'Clasificación Automática de Opiniones Hoteleras',
+      img: 'images/booking.png',
+      desc: 'Desarrollar un modelo automático de clasificación que determine si una crítica hotelera es favorable o desfavorable, utilizando reseñas de Booking.com como fuente de datos. Dado el desbalance en las clases (mayoría de críticas positivas), se priorizó el uso de métricas como ROC AUC en lugar de accuracy.',
+      pdf: 'pdf/booking.pdf'
+    },
+    3: {
+      title: 'Análisis de Destino Residencial en Edificios de la Comunidad de Madrid',
+      img: 'images/viviendasmadrid.png',
+      desc: 'Analizar la proporción de edificios destinados principalmente a viviendas familiares en la Comunidad de Madrid, usando datos censales oficiales del año 2001. El objetivo es identificar patrones territoriales, detectar zonas con baja presencia residencial y extraer oportunidades de acción pública o privada.',
+      pdf: 'pdf/VIVIENDAS_MADRID.pdf'
+    },
+    4: {
+      title: 'TFM German Velasquez UAM',
+      img: 'images/tfm.png',
+      desc: 'Este Trabajo Fin de Máster se centra en el análisis del consumo de productos petrolíferos en las comunidades autónomas de España entre 2020 y 2024, con el objetivo de identificar patrones de consumo y proyectar tendencias hasta 2026. En el marco de la transición energética y las políticas públicas, se ha utilizado una combinación de técnicas de análisis de datos, segmentación y modelado predictivo para explorar cómo podría evolucionar la demanda de combustibles fósiles en los próximos años.',
+      pdf: 'pdf/TFM-GV.pdf'
+    }
+  };
 
-document.querySelectorAll('.project-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.dataset.project;
-    const data = projectData[id];
+  document.querySelectorAll('.project-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.project;
+      const data = projectData[id];
 
-    modalTitle.textContent = data.title;
-    modalImg.src = data.img;
-    modalDesc.textContent = data.desc;
-    modalPdf.href = data.pdf;
+      modalTitle.textContent = data.title;
+      modalImg.src = data.img;
+      modalDesc.textContent = data.desc;
+      modalPdf.href = data.pdf;
 
-    modal.removeAttribute('hidden');
-    modal.style.display = 'flex';
+      modal.removeAttribute('hidden');
+      modal.style.display = 'flex';
+    });
   });
-});
 
-closeModal.addEventListener('click', () => {
-  modal.setAttribute('hidden', true);
-  modal.style.display = 'none';
-});
+  closeModal.addEventListener('click', () => {
+    modal.setAttribute('hidden', true);
+    modal.style.display = 'none';
+  });
+
+  // === SOBRE MÍ: Carrusel de fotos automático con pausa al hacer clic ===
+  // === SOBRE MÍ: Carrusel de fotos automático con pausa al hacer clic ===
+  const images = document.querySelectorAll('.carousel-image');
+  let currentSobreIndex = 0;
+  let sobreIntervalId;
+  let isPaused = false;
+
+  function showSobreImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  function startSobreCarousel() {
+    sobreIntervalId = setInterval(() => {
+      if (!isPaused) {
+        currentSobreIndex = (currentSobreIndex + 1) % images.length;
+        showSobreImage(currentSobreIndex);
+      }
+    }, 3000);
+  }
+
+  images.forEach(img => {
+    img.addEventListener('mousedown', () => {
+      isPaused = true;
+    });
+
+    img.addEventListener('mouseup', () => {
+      isPaused = false;
+    });
+
+    img.addEventListener('mouseleave', () => {
+      isPaused = false;
+    });
+  });
+
+  showSobreImage(currentSobreIndex);
+  startSobreCarousel();
 
   // === PROYECTOS: CARRUSEL ===
   const track = document.querySelector(".carrusel-track");
@@ -198,46 +237,51 @@ closeModal.addEventListener('click', () => {
   updateCarrusel(false);
   startAutoplay();
 
-  // === HABILIDADES: MODAL DE HABILIDAD ===
-  const icons = document.querySelectorAll('.habilidad-icono');
-  const skillModal = document.getElementById('habilidad-modal');
-  const modalHabilidad = document.getElementById('modal-habilidad');
-  const modalNivel = document.getElementById('modal-nivel');
+  // === HABILIDADES: MODAL ===
+const icons = document.querySelectorAll('.habilidad-icono');
+const skillModal = document.getElementById('habilidad-modal');
+const modalHabilidad = document.getElementById('modal-habilidad');
+const modalNivel = document.getElementById('modal-nivel');
 
-  icons.forEach(icon => {
-    icon.addEventListener('click', (e) => {
-      const habilidad = icon.dataset.habilidad;
-      const nivel = icon.dataset.nivel;
+icons.forEach(icon => {
+  icon.addEventListener('mouseenter', (e) => {
+    const habilidad = icon.dataset.habilidad;
+    const nivel = icon.dataset.nivel;
 
-      modalHabilidad.textContent = habilidad;
-      modalNivel.textContent = `Nivel: ${nivel}`;
+    modalHabilidad.textContent = habilidad;
+    modalNivel.textContent = `Nivel: ${nivel}`;
 
-      const rect = icon.getBoundingClientRect();
-      skillModal.style.left = `${rect.left + rect.width / 2}px`;
-      skillModal.style.top = `${rect.top - 10}px`;
-      skillModal.style.transform = 'translate(-50%, -100%)';
-      skillModal.style.display = 'block';
+    const rect = icon.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollX = window.scrollX || window.pageXOffset;
 
-      e.stopPropagation();
-    });
+    // Posicionamos el modal centrado arriba del icono
+    skillModal.style.position = 'absolute';
+    skillModal.style.left = `${rect.left + rect.width / 2 + scrollX}px`;
+    skillModal.style.top = `${rect.top + scrollY - 10}px`;
+    skillModal.style.transform = 'translate(-50%, -100%)';
+    skillModal.style.zIndex = '1000';
+    skillModal.style.display = 'block';
+    skillModal.style.pointerEvents = 'none'; // Para evitar interacción no deseada
   });
 
-  document.addEventListener('click', () => {
+  icon.addEventListener('mouseleave', () => {
     skillModal.style.display = 'none';
   });
+});
 
   // === ANIMACIÓN REVEAL SCROLL ===
   const revealElements = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
-  });
-}, { threshold: 0.1 });
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
 
-revealElements.forEach(el => revealObserver.observe(el));
+  revealElements.forEach(el => revealObserver.observe(el));
 
 
   // === POLÍTICA DE PRIVACIDAD: MODAL ===
@@ -307,5 +351,27 @@ revealElements.forEach(el => revealObserver.observe(el));
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
+
+
 });
 // === FIN: DOMContentLoaded === //
+// Modal de imagen ampliada
+const modalImg = document.getElementById("modal-img-proyecto");
+const imgAmpliada = document.getElementById("img-ampliada");
+const cerrarModalImg = document.querySelector(".cerrar-modal-img");
+
+document.querySelectorAll(".proyecto-card img").forEach(img => {
+  img.addEventListener("click", () => {
+    imgAmpliada.src = img.src;
+    imgAmpliada.alt = img.alt;
+    modalImg.style.display = "block";
+  });
+});
+
+cerrarModalImg.addEventListener("click", () => {
+  modalImg.style.display = "none";
+});
+
+modalImg.addEventListener("click", (e) => {
+  if (e.target === modalImg) modalImg.style.display = "none";
+});

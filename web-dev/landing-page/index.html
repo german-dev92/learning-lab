@@ -27,11 +27,19 @@
 
 <body>
   <div class="area">
-  <ul class="circles">
-    <li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-</div>
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
   <!-- HEADER / NAVEGACION-->
 
   <header class="site-header">
@@ -46,8 +54,8 @@
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#testimonios-contacto">Testimonios</a></li>
+          <li><a href="#testimonios-contacto">Contacto</a></li>
         </ul>
       </nav>
 
@@ -61,63 +69,63 @@
   </header>
 
   <!-- HERO / BIENVENIDA -->
-<section id="hero" class="hero-section reveal">
-  <div class="hero-container">
-    <!-- Columna izquierda -->
-    <div class="hero-left">
-      <div class="saludo">
-        <h2>
-          <span class="color1">Transformo datos</span>,
-          <span class="color2">diseño soluciones,</span>
-          <span class="color1">y desarrollo con propósito.</span>
-        </h2>
+  <section id="hero" class="hero-section reveal">
+    <div class="hero-container">
+      <!-- Columna izquierda -->
+      <div class="hero-left">
+        <div class="saludo">
+          <h2>
+            <span class="color1">Transformo datos</span>,
+            <span class="color2">diseño soluciones,</span>
+            <span class="color1">y desarrollo con propósito.</span>
+          </h2>
+        </div>
+
+        <p class="descripcion">
+          Hola! Me llamo German, soy Desarrollador web y científico de datos, combino machine learning y desarrollo web
+          para crear soluciones prácticas e intuitivas. Aquí algunos ejemplos que lo demuestran:
+        </p>
+
+        <div class="project-buttons">
+          <button class="project-btn" data-project="1">
+            <img src="images/icons/bitcoin.png" alt="BTC Icono" class="icon-img" />
+            <span class="title">Predicción BTC</span>
+          </button>
+          <button class="project-btn" data-project="2">
+            <img src="images/icons/hotel.png" alt="Opiniones Icono" class="icon-img" />
+            <span class="title">Opiniones Hoteles</span>
+          </button>
+          <button class="project-btn" data-project="3">
+            <img src="images/icons/vivienda-social.png" alt="Vivienda Icono" class="icon-img" />
+            <span class="title">Análisis Vivienda</span>
+          </button>
+          <button class="project-btn" data-project="4">
+            <img src="images/icons/barril-de-petroleo.png" alt="TFM Icono" class="icon-img" />
+            <span class="title">TFM Clasificador</span>
+          </button>
+        </div>
       </div>
 
-      <p class="descripcion">
-        Hola! Me llamo German, soy Desarrollador web y científico de datos, combino machine learning y desarrollo web
-        para crear soluciones prácticas e intuitivas. Aquí algunos ejemplos que lo demuestran:
-      </p>
-
-      <div class="project-buttons">
-        <button class="project-btn" data-project="1">
-          <img src="images/icons/bitcoin.png" alt="BTC Icono" class="icon-img" />
-          <span class="title">Predicción BTC</span>
-        </button>
-        <button class="project-btn" data-project="2">
-          <img src="images/icons/hotel.png" alt="Opiniones Icono" class="icon-img" />
-          <span class="title">Opiniones Hoteles</span>
-        </button>
-        <button class="project-btn" data-project="3">
-          <img src="images/icons/vivienda-social.png" alt="Vivienda Icono" class="icon-img" />
-          <span class="title">Análisis Vivienda</span>
-        </button>
-        <button class="project-btn" data-project="4">
-          <img src="images/icons/barril-de-petroleo.png" alt="TFM Icono" class="icon-img" />
-          <span class="title">TFM Clasificador</span>
-        </button>
+      <!-- Columna derecha -->
+      <div class="hero-right">
+        <img src="images/logo-dem.png" alt="Logo German Dev" aria-hidden="true" />
       </div>
     </div>
-
-    <!-- Columna derecha -->
-    <div class="hero-right">
-      <img src="images/logo-dem.png" alt="Logo German Dev" aria-hidden="true" />
-    </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- === SOBRE MÍ === -->
   <section id="sobre-mi" class="sobre-mi-section" tabindex="0" aria-label="Sobre mí">
     <div class="sobre-mi-grid">
       <!-- Carrusel de imágenes -->
-      <div class="carousel" aria-roledescription="Carrusel de imágenes">
+      <div class="carousel reveal" aria-roledescription="Carrusel de imágenes">
         <img src="images/ft1.jpeg" alt="Foto 1 de German" class="carousel-image active" />
         <img src="images/ft2.jpeg" alt="Foto 2 de German" class="carousel-image" />
         <img src="images/ft3.jpeg" alt="Foto 3 de German" class="carousel-image" />
       </div>
 
       <!-- Biografía -->
-      <div class="bio">
+      <div class="bio reveal">
         <h2>Sobre mí</h2>
         <p class="descripcion">
           Soy German Velásquez, desarrollador web y científico de datos con formación técnica en programación y un
@@ -144,116 +152,248 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
- <section id="servicios" class="reveal" tabindex="0" aria-label="Servicios ofrecidos">
-  <h2>Servicios</h2>
-  <div class="servicios-grid">
-    <div class="servicio-card">
-      <div class="icono"><i class="fas fa-code"></i></div>
-      <h3>Desarrollo Web</h3>
-      <p>Diseño y desarrollo de sitios modernos, responsivos y optimizados para rendimiento y experiencia de usuario.</p>
-    </div>
-    <div class="servicio-card">
-      <div class="icono"><i class="fas fa-search"></i></div>
-      <h3>SEO</h3>
-      <p>Optimización de motores de búsqueda para mejorar tu visibilidad y atraer tráfico de calidad.</p>
-    </div>
-    <div class="servicio-card">
-      <div class="icono"><i class="fas fa-lightbulb"></i></div>
-      <h3>Asesoría UX/UI</h3>
-      <p>Consejos estratégicos de diseño centrado en el usuario, accesibilidad y coherencia visual.</p>
-    </div>
-  </div>
-</section>
-
-
-  <!-- SECCIÓN PROYECTOS COMO CARRUSEL -->
-  <section class="proyectos-carrusel reveal">
-    <h2>Proyectos</h2>
-    <div class="carrusel-wrapper">
-      <button class="carrusel-btn prev">&#60;</button>
-
-      <div class="carrusel-contenedor">
-        <div class="carrusel-track">
-          <!-- Tarjetas de proyecto -->
-          <div class="proyecto-card" data-project="1">
-            <img src="images/bitocoin.png" alt="Gráfico de predicción de precios de Bitcoin" />
-            <h3>Predicción de precios BTC</h3>
-            <p>Desarrollar un sistema capaz de predecir si el precio de una criptomoneda aumentará o disminuirá en las
-              próximas 24 horas, utilizando datos de mercado en tiempo real. Como caso de estudio se utilizó Bitcoin,
-              aunque el modelo se entrenó con datos de las 100 criptomonedas principales según su capitalización.</p>
-            <a href="pdf/informe_bitcoin.pdf" target="_blank">Descargar informe</a>
-          </div>
-
-          <div class="proyecto-card" data-project="2">
-            <img src="images/booking.png" alt="Clasificación de opiniones hoteleras de Booking" />
-            <h3>Clasificación Automática de Opiniones Hoteleras</h3>
-            <p>Desarrollar un modelo automático de clasificación que determine si una crítica hotelera es favorable
-              o desfavorable, utilizando reseñas de Booking.com como fuente de datos. Dado el desbalance en las clases
-              (mayoría de críticas positivas), se priorizó el uso de métricas como ROC AUC en lugar de accuracy.</p>
-            <a href="pdf/booking.pdf" target="_blank">Descargar informe</a>
-          </div>
-
-          <div class="proyecto-card" data-project="3">
-            <img src="images/viviendasmadrid.png" alt="Análisis de destino residencial en Madrid" />
-            <h3>Análisis de Destino Residencial en Edificios de la Comunidad de Madrid</h3>
-            <p>Analizar la proporción de edificios destinados principalmente a viviendas familiares en la
-              Comunidad de Madrid, usando datos censales oficiales del año 2001. El objetivo es identificar patrones
-              territoriales, detectar zonas con baja presencia residencial y extraer oportunidades de acción pública o
-              privada.</p>
-            <a href="pdf/VIVIENDAS_MADRID.pdf" target="_blank">Descargar informe</a>
-          </div>
-
-          <div class="proyecto-card" data-project="4">
-            <img src="images/tfm.png" alt="Trabajo Fin de Máster sobre consumo energético en España" />
-            <h3>TFM German Velasquez UAM</h3>
-            <p>Este Trabajo Fin de Máster se centra en el análisis del consumo de productos petrolíferos en las
-              comunidades autónomas de España entre 2020 y 2024, con el objetivo de identificar patrones de consumo y
-              proyectar tendencias hasta 2026. En el marco de la transición energética y las políticas públicas, se ha
-              utilizado una combinación de técnicas de análisis de datos, segmentación y modelado predictivo para
-              explorar cómo podría evolucionar la demanda de combustibles fósiles en los próximos años.</p>
-            <a href="pdf/TFM-GV.pdf" target="_blank">Descargar informe</a>
-          </div>
-          <!-- Agregar más .proyecto-card aquí -->
-        </div>
+  <!-- === SERVICIOS === -->
+  <section id="servicios" class="reveal servicios-section" tabindex="0" aria-label="Servicios que ofrezco">
+    <h2>¿Cómo puedo ayudarte?</h2>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <i class="icono-servicio fas fa-code"></i>
+        <h3>Desarrollo Web</h3>
+        <p>Diseño y desarrollo sitios web modernos, rápidos y responsivos usando HTML, CSS, JS y Angular. Ideal para
+          emprendedores y pequeñas empresas.</p>
       </div>
-
-      <button class="carrusel-btn next">&#62;</button>
-      <div class="carrusel-paginacion">
-      
+      <div class="servicio-card">
+        <i class="icono-servicio fas fa-database"></i>
+        <h3>Integración con Bases de Datos</h3>
+        <p>Conecto tu sitio con bases de datos MySQL o MongoDB para que sea dinámico y funcional. También puedo crear
+          APIs REST personalizadas.</p>
       </div>
+      <div class="servicio-card">
+        <i class="icono-servicio fas fa-chart-line"></i>
+        <h3>Análisis de Datos</h3>
+        <p>Uso Python, Pandas y herramientas de Big Data para extraer valor de tus datos. Reportes claros,
+          visualizaciones y recomendaciones.</p>
+      </div>
+      <div class="servicio-card">
+        <i class="icono-servicio fas fa-search"></i>
+        <h3>Optimización SEO</h3>
+        <p>Mejora tu presencia online con optimización técnica, estructura semántica HTML5 y buenas prácticas para
+          buscadores.</p>
+      </div>
+    </div>
+
+    <div class="cta-final">
+      <p class="cta-text">¿Listo para transformar tu proyecto?</p>
+      <a href="#contacto" class="btn">Contáctame</a>
     </div>
   </section>
 
- <section id="habilidades" class="reveal habilidades-seccion" aria-label="Habilidades técnicas">
-  <h2>Habilidades Técnicas</h2>
-  <div class="habilidades-grid">
-    <div class="habilidad-icono" data-habilidad="HTML5" data-nivel="Avanzado">
-      <img src="images/icons/html5.png" alt="HTML5">
-    </div>
-    <div class="habilidad-icono" data-habilidad="CSS3" data-nivel="Avanzado">
-      <img src="images/icons/css3.png" alt="CSS3">
-    </div>
-    <div class="habilidad-icono" data-habilidad="JavaScript" data-nivel="Avanzado">
-      <img src="images/icons/js.png" alt="JavaScript">
-    </div>
-    <div class="habilidad-icono" data-habilidad="React" data-nivel="Intermedio">
-      <img src="images/icons/images.png" alt="React">
-    </div>
-    <div class="habilidad-icono" data-habilidad="Git" data-nivel="Avanzado">
-      <img src="images/icons/git.png" alt="Git">
-    </div>
-    
-    <!-- Agrega más aquí -->
-  </div>
+  <!-- SECCIÓN PROYECTOS COMO CARRUSEL -->
+  <section id="proyectos" class="proyectos-carrusel reveal">
+    <h2>Proyectos</h2>
+    <div class="carrusel-wrapper">
 
-  <!-- Modal flotante -->
-  <div class="habilidad-modal" id="habilidad-modal">
-    <p id="modal-habilidad"></p>
-    <span id="modal-nivel"></span>
-  </div>
-</section>
+      <!-- Botón anterior con icono -->
+      <button class="carrusel-btn prev">
+        <img src="images/icons/btn-left.png" alt="Anterior" />
+      </button>
 
+      <div class="carrusel-contenedor">
+        <div class="carrusel-track">
+
+          <!-- Tarjeta 1 -->
+          <div class="proyecto-card" data-project="1">
+            <img src="images/bitocoin.png" alt="Predicción de precios de Bitcoin" />
+            <h3>Predicción de precios BTC</h3>
+            <ul class="tecnologias">
+              <li>Python</li>
+              <li>Scikit-learn</li>
+              <li>Pandas</li>
+            </ul>
+            <p class="descripcion-corta">
+              Clasificación binaria del precio futuro de criptomonedas usando datos del mercado y árboles de decisión.
+            </p>
+            <a href="pdf/informe_bitcoin.pdf" target="_blank" class="btn-descarga">📄 Descargar informe PDF</a>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="proyecto-card" data-project="2">
+            <img src="images/booking.png" alt="Opiniones hoteleras Booking" />
+            <h3>Opiniones Hoteleras</h3>
+            <ul class="tecnologias">
+              <li>Python</li>
+              <li>NLP</li>
+              <li>Random Forest</li>
+            </ul>
+            <p class="descripcion-corta">
+              Modelo automático para detectar opiniones positivas o negativas en reseñas reales con técnicas de lenguaje
+              natural.
+            </p>
+            <a href="pdf/booking.pdf" target="_blank" class="btn-descarga">📄 Descargar informe PDF</a>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="proyecto-card" data-project="3">
+            <img src="images/viviendasmadrid.png" alt="Mapa de uso residencial en Madrid" />
+            <h3>Destino Residencial en Madrid</h3>
+            <ul class="tecnologias">
+              <li>Pandas</li>
+              <li>Seaborn</li>
+              <li>Geolocalización</li>
+            </ul>
+            <p class="descripcion-corta">
+              Análisis territorial para entender la distribución de viviendas por municipios, zonas y comunidades.
+            </p>
+            <a href="pdf/VIVIENDAS_MADRID.pdf" target="_blank" class="btn-descarga">📄 Descargar informe PDF</a>
+          </div>
+
+          <!-- Tarjeta 4 -->
+          <div class="proyecto-card" data-project="4">
+            <img src="images/tfm.png" alt="TFM sobre consumo energético" />
+            <h3>TFM – Consumo Energético</h3>
+            <ul class="tecnologias">
+              <li>K-Means</li>
+              <li>SARIMAX</li>
+              <li>Python</li>
+            </ul>
+            <p class="descripcion-corta">
+              Modelos para segmentar regiones por consumo de petróleo y prever su evolución hasta 2026.
+            </p>
+            <a href="pdf/TFM-GV.pdf" target="_blank" class="btn-descarga">📄 Descargar informe PDF</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Botón siguiente con icono -->
+      <button class="carrusel-btn next">
+        <img src="images/icons/btn-right.png" alt="Siguiente" />
+      </button>
+
+      <div class="carrusel-paginacion"></div>
+    </div>
+  </section>
+
+  <!-- === HABILIDADES === -->
+  <section id="habilidades" class="reveal habilidades-seccion" aria-label="Habilidades técnicas">
+    <h2 class="habilidades-titulo-principal">Habilidades Técnicas</h2>
+
+    <!-- FILA 1: Dos columnas en grid -->
+    <div class="habilidades-row-2cols">
+
+      <!-- Columna 1: Desarrollo Web -->
+      <div class="habilidades-columna">
+        <h3 class="habilidades-subtitulo">🖥️ Desarrollo Web</h3>
+
+        <h2 class="habilidades-titulo-categoria">Frontend</h2>
+        <div class="habilidades-grid">
+          <div class="habilidad-icono" data-habilidad="HTML5" data-nivel="Avanzado"><img src="images/icons/html5.png"
+              alt="HTML5"></div>
+          <div class="habilidad-icono" data-habilidad="CSS3" data-nivel="Avanzado"><img src="images/icons/css3.png"
+              alt="CSS3"></div>
+          <div class="habilidad-icono" data-habilidad="JavaScript" data-nivel="Avanzado"><img src="images/icons/js.png"
+              alt="JavaScript"></div>
+          <div class="habilidad-icono" data-habilidad="Angular" data-nivel="Intermedio"><img
+              src="images/icons/angular.png" alt="Angular"></div>
+          <div class="habilidad-icono" data-habilidad="Bootstrap" data-nivel="Intermedio"><img
+              src="images/icons/bootstrap.png" alt="Bootstrap"></div>
+          <div class="habilidad-icono" data-habilidad="Ionic" data-nivel="Intermedio"><img src="images/icons/ionic.png"
+              alt="Ionic"></div>
+        </div>
+
+        <h2 class="habilidades-titulo-categoria">Backend</h2>
+        <div class="habilidades-grid">
+          <div class="habilidad-icono" data-habilidad="Node.js" data-nivel="Intermedio"><img
+              src="images/icons/nodejs.png" alt="Node.js"></div>
+          <div class="habilidad-icono" data-habilidad="Express" data-nivel="Intermedio"><img
+              src="images/icons/express.png" alt="Express"></div>
+          <div class="habilidad-icono" data-habilidad="PHP" data-nivel="Intermedio"><img src="images/icons/php.png"
+              alt="PHP"></div>
+          <div class="habilidad-icono" data-habilidad="Java" data-nivel="Intermedio"><img src="images/icons/java.png"
+              alt="Java"></div>
+        </div>
+
+        <h2 class="habilidades-titulo-categoria">APIs</h2>
+        <div class="habilidades-grid">
+          <div class="habilidad-icono" data-habilidad="RESTful APIs" data-nivel="Intermedio"><img
+              src="images/icons/api.png" alt="RESTful API"></div>
+          <div class="habilidad-icono" data-habilidad="HTTP Methods" data-nivel="Intermedio"><img
+              src="images/icons/http.png" alt="HTTP Methods"></div>
+        </div>
+
+        <h2 class="habilidades-titulo-categoria">Control de Versiones</h2>
+        <div class="habilidades-grid">
+          <div class="habilidad-icono" data-habilidad="Git & GitHub" data-nivel="Avanzado"><img
+              src="images/icons/git.png" alt="Git"></div>
+        </div>
+      </div>
+
+      <!-- Columna 2: Ciencia de Datos & Big Data -->
+      <div class="habilidades-columna">
+        <h3 class="habilidades-subtitulo">🧠 Ciencia de Datos & Big Data</h3>
+
+        <h2 class="habilidades-titulo-categoria">Lenguajes y Librerías</h2>
+        <div class="habilidades-grid">
+          <div class="habilidad-icono" data-habilidad="Python" data-nivel="Avanzado"><img src="images/icons/python.png"
+              alt="Python"></div>
+          <div class="habilidad-icono" data-habilidad="Pandas" data-nivel="Avanzado"><img src="images/icons/pandas.png"
+              alt="Pandas"></div>
+          <div class="habilidad-icono" data-habilidad="PySpark" data-nivel="Intermedio"><img
+              src="images/icons/pyspark.png" alt="PySpark"></div>
+          <div class="habilidad-icono" data-habilidad="SQL" data-nivel="Intermedio"><img src="images/icons/sql.png"
+              alt="SQL"></div>
+        </div>
+
+        <h2 class="habilidades-titulo-categoria">Big Data</h2>
+        <div class="habilidades-grid">
+          <div class="habilidad-icono" data-habilidad="Apache Spark" data-nivel="Intermedio"><img
+              src="images/icons/spark.png" alt="Spark"></div>
+          <div class="habilidad-icono" data-habilidad="Hive" data-nivel="Intermedio"><img src="images/icons/hive.png"
+              alt="Hive"></div>
+          <div class="habilidad-icono" data-habilidad="Pig" data-nivel="Básico"><img src="images/icons/pig.png"
+              alt="Pig"></div>
+        </div>
+
+        <h2 class="habilidades-titulo-categoria">Visualización de Datos</h2>
+        <div class="habilidades-grid">
+          <div class="habilidad-icono" data-habilidad="Oracle Data Visualization" data-nivel="Intermedio"><img
+              src="images/icons/oracle.png" alt="Oracle"></div>
+          <div class="habilidad-icono" data-habilidad="Power BI" data-nivel="Básico"><img src="images/icons/powerbi.png"
+              alt="Power BI"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILA 2: Cloud & Infraestructura (ancho completo) -->
+    <div class="habilidades-row-fullwidth">
+      <h3 class="habilidades-subtitulo">☁️ Cloud & Infraestructura</h3>
+      <div class="habilidades-grid">
+        <div class="habilidad-icono-centrado" data-habilidad="Azure" data-nivel="Básico"><img src="images/icons/azure.png"
+            alt="Azure"></div>
+        <div class="habilidad-icono-centrado" data-habilidad="Terraform" data-nivel="Básico"><img
+            src="images/icons/terraform.png" alt="Terraform"></div>
+        <div class="habilidad-icono-centrado" data-habilidad="Vagrant" data-nivel="Básico"><img src="images/icons/vagrant.png"
+            alt="Vagrant"></div>
+        <div class="habilidad-icono-centrado" data-habilidad="Ubuntu" data-nivel="Intermedio"><img src="images/icons/ubuntu.png"
+            alt="Ubuntu"></div>
+      </div>
+    </div>
+
+    <!-- FILA 3: Bases de Datos y Sistemas (ancho completo) -->
+    <div class="habilidades-row-fullwidth">
+      <h3 class="habilidades-subtitulo">🗃️ Bases de Datos y Sistemas</h3>
+      <div class="habilidades-grid">
+        <div class="habilidad-icono-centrado" data-habilidad="MySQL" data-nivel="Intermedio"><img src="images/icons/mysql.png"
+            alt="MySQL"></div>
+        <div class="habilidad-icono-centrado" data-habilidad="phpMyAdmin" data-nivel="Intermedio"><img
+            src="images/icons/phpmyadmin.png" alt="phpMyAdmin"></div>
+        <div class="habilidad-icono-centrado" data-habilidad="MongoDB" data-nivel="Intermedio"><img
+            src="images/icons/mongodb.png" alt="MongoDB"></div>
+        <div class="habilidad-icono-centrado" data-habilidad="Bash" data-nivel="Básico"><img src="images/icons/bash.png"
+            alt="Bash"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- TESTIMONIOS/ CONTACTO -->
   <section id="testimonios-contacto" class="seccion-doble">
@@ -330,6 +470,17 @@
     </div>
   </div>
 
+  <!-- Modal de imagen del proyecto -->
+  <div id="modal-img-proyecto" class="modal-img">
+    <span class="cerrar-modal-img">&times;</span>
+    <img class="modal-img-contenido" id="img-ampliada" alt="Vista ampliada del proyecto">
+  </div>
+
+  <!-- Coloca esto justo antes de cerrar </body> -->
+  <div class="habilidad-modal" id="habilidad-modal">
+    <p id="modal-habilidad">aqui estoy</p>
+    <span id="modal-nivel"></span>
+  </div>
 
   <footer>
     <p>&copy; 2023 German Dev. Todos los derechos reservados.</p>
