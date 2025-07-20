@@ -16,6 +16,11 @@
 
   --color-footer-bg: #222;
   --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  --color-nivel-basico: #2ecc71;
+  --color-nivel-intermedio: #f1c40f;
+  --color-nivel-avanzado: #9b59b6;
+  
 }
 
 /* === RESET === */
@@ -647,6 +652,9 @@ section h2 {
 }
 
 /* === Tarjetas === */
+.proyectos-carrusel  {
+  background-color: var(--color-white);
+}
 .proyecto-card {
   flex: 0 0 300px;
   background-color: var(--color-bg);
@@ -828,21 +836,21 @@ section h2 {
 /* === HABILIDADES === */
 
 .habilidades-seccion {
-  padding: 2rem 1.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--color-secondary-coral);
 }
 
 /* GRID principal con dos columnas */
 .habilidades-row-2cols {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
   width: 100%;
-  max-width: 950px; /* Asegura alineación con filas inferiores */
-  margin-top: 1rem;
+  max-width: 1000px;
+  margin-top: 0.5rem;
 }
 
 /* Columnas con fondo blanco y estilo caja */
@@ -850,14 +858,45 @@ section h2 {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
+}
+/* NUEVO contenedor para agrupar Fila 2 y 3 lado a lado */
+.habilidades-row-doble {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 0.5rem;
 }
 
-/* Filas 2 y 3 con mismo ancho que columnas */
+/* Ajustamos las filas para que se comporten como columnas */
 .habilidades-row-fullwidth {
+  flex: 1 1 45%;
+  max-width: 450px;
+}
+
+@media (max-width: 768px) {
+  .habilidades-row-doble {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .habilidades-row-fullwidth {
+    max-width: 100%;
+  }
+}
+
+/* Filas 2 y 3 (full width) */
+.habilidades-row-fullwidth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   width: 100%;
-  max-width: 950px;
-  margin-top: 1rem;
+  max-width: 850px;
+  margin-top: 0.5rem;
   padding: 0.75rem 1rem;
   background-color: #ffffff;
   border-radius: 12px;
@@ -866,53 +905,143 @@ section h2 {
 
 /* Subtítulos y títulos */
 .habilidades-subtitulo {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin: 1rem 0 0.75rem;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.habilidades-row-fullwidth .habilidades-subtitulo {
+  margin: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .habilidades-titulo-categoria {
   font-size: 1rem;
   font-weight: 600;
   margin: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+  padding-left: 0.25rem;
 }
 
-/* Grid de iconos para columnas (izquierda) */
+/* Grid de iconos para columnas (alineados izquierda) */
 .habilidades-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  gap: 0.5rem 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 60px));
+  gap: 0.4rem;
+  justify-content: start;
+  margin-top: 0.25rem;
   justify-items: start;
+  margin-bottom: 1.65rem;
+}
+
+.habilidades-iconos-centrados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5.4rem;
   margin-top: 0.25rem;
 }
 
-/* Iconos para filas 2 y 3 (centrados) */
-.habilidad-icono-centrado {
+/* === Iconos para columnas (izquierda) === */
+.habilidad-icono {
   position: relative;
   width: 60px;
   height: 60px;
-  margin: 0 auto;
   cursor: pointer;
   transition: transform 0.3s ease;
+  gap: 5.4rem;
 }
 
-.habilidad-icono,
-.habilidad-icono-centrado {
+.habilidad-icono:hover {
+  transform: scale(1.2);
+}
+
+.habilidad-icono img {
   width: 60px;
   height: 60px;
+  object-fit: contain;
+}
+
+/* === Iconos para filas (centrados) === */
+.habilidad-icono-centrado {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease;
 }
 
-.habilidad-icono:hover,
 .habilidad-icono-centrado:hover {
   transform: scale(1.2);
 }
 
-.habilidad-icono img,
 .habilidad-icono-centrado img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
+}
+
+/* === MODAL DE NIVEL DE HABILIDAD === */
+.habilidad-modal {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 220px;
+  transition: opacity 0.3s ease;
+}
+
+.modal-nivel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+/* Contenedor horizontal de barras */
+.nivel-barras {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+/* Estilo individual de barras */
+.nivel-barra {
+  width: 6px;
+  height: 16px;
+  border-radius: 2px;
+  background-color: #ddd;
+  transition: background-color 0.3s ease;
+}
+
+/* Colores por nivel */
+.nivel-barra.activa.basico {
+  background-color: var(--color-nivel-basico);
+}
+.nivel-barra.activa.intermedio {
+  background-color: var(--color-nivel-intermedio);
+}
+.nivel-barra.activa.avanzado {
+  background-color: var(--color-nivel-avanzado);
+}
+
+/* === VARIABLES DE COLOR DE NIVEL === */
+:root {
+  --color-nivel-basico: #6FCF97;     /* verde */
+  --color-nivel-intermedio: #F2C94C; /* amarillo */
+  --color-nivel-avanzado: #9B51E0;   /* morado */
 }
 
 /* Responsive */
@@ -920,16 +1049,17 @@ section h2 {
   .habilidades-row-2cols {
     grid-template-columns: 1fr;
   }
+
   .habilidades-columna,
   .habilidades-row-fullwidth {
     max-width: 100%;
     text-align: center;
   }
+
   .habilidades-grid {
     justify-items: center;
   }
 }
-
 
 /* Modal estilo tooltip */
 #habilidad-modal {
@@ -942,6 +1072,88 @@ section h2 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   pointer-events: none;
   z-index: 1000;
+}
+
+.modal-nivel-container {
+  margin-top: 0.25rem;
+}
+
+#modal-nivel-texto {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+.nivel-barra {
+  width: 6px;
+  height: 16px;
+  border-radius: 2px;
+  background-color: #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.nivel-barra.activa.basico {
+  background-color: var(--color-nivel-basico);
+}
+
+.nivel-barra.activa.intermedio {
+  background-color: var(--color-nivel-intermedio);
+}
+
+.nivel-barra.activa.avanzado {
+  background-color: var(--color-nivel-avanzado);
+}
+
+.nivel-barras {
+  display: flex;
+  gap: 4px; /* Espacio entre barras */
+  margin-top: 4px;
+}
+
+.modal-nivel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+/* Tooltip */
+.nivel-barra::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+/* Triángulo del tooltip */
+.nivel-barra::before {
+  content: "";
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Mostrar tooltip al hacer hover */
+.nivel-barra:hover::after,
+.nivel-barra:hover::before {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

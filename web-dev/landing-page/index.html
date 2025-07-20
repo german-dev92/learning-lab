@@ -348,10 +348,9 @@
         <div class="habilidades-grid">
           <div class="habilidad-icono" data-habilidad="Apache Spark" data-nivel="Intermedio"><img
               src="images/icons/spark.png" alt="Spark"></div>
-          <div class="habilidad-icono" data-habilidad="Hive" data-nivel="Intermedio"><img src="images/icons/hive.png"
-              alt="Hive"></div>
-          <div class="habilidad-icono" data-habilidad="Pig" data-nivel="Básico"><img src="images/icons/pig.png"
-              alt="Pig"></div>
+          <div class="habilidad-icono" data-habilidad="hadoop" data-nivel="Intermedio"><img
+              src="images/icons/hadoop.png" alt="Hive"></div>
+
         </div>
 
         <h2 class="habilidades-titulo-categoria">Visualización de Datos</h2>
@@ -363,34 +362,44 @@
         </div>
       </div>
     </div>
-
     <!-- FILA 2: Cloud & Infraestructura (ancho completo) -->
-    <div class="habilidades-row-fullwidth">
-      <h3 class="habilidades-subtitulo">☁️ Cloud & Infraestructura</h3>
-      <div class="habilidades-grid">
-        <div class="habilidad-icono-centrado" data-habilidad="Azure" data-nivel="Básico"><img src="images/icons/azure.png"
-            alt="Azure"></div>
-        <div class="habilidad-icono-centrado" data-habilidad="Terraform" data-nivel="Básico"><img
-            src="images/icons/terraform.png" alt="Terraform"></div>
-        <div class="habilidad-icono-centrado" data-habilidad="Vagrant" data-nivel="Básico"><img src="images/icons/vagrant.png"
-            alt="Vagrant"></div>
-        <div class="habilidad-icono-centrado" data-habilidad="Ubuntu" data-nivel="Intermedio"><img src="images/icons/ubuntu.png"
-            alt="Ubuntu"></div>
+    <div class="habilidades-row-doble">
+      <!-- FILA 2: Cloud & Infraestructura -->
+      <div class="habilidades-row-fullwidth">
+        <h3 class="habilidades-subtitulo">☁️ Cloud & Infraestructura</h3>
+        <div class="habilidades-iconos-centrados">
+          <div class="habilidad-icono-centrado" data-habilidad="Azure" data-nivel="Básico">
+            <img src="images/icons/azure.png" alt="Azure">
+          </div>
+          <div class="habilidad-icono-centrado" data-habilidad="Terraform" data-nivel="Básico">
+            <img src="images/icons/terraform.png" alt="Terraform">
+          </div>
+          <div class="habilidad-icono-centrado" data-habilidad="Vagrant" data-nivel="Básico">
+            <img src="images/icons/vagrant.png" alt="Vagrant">
+          </div>
+          <div class="habilidad-icono-centrado" data-habilidad="Ubuntu" data-nivel="Intermedio">
+            <img src="images/icons/ubuntu.png" alt="Ubuntu">
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- FILA 3: Bases de Datos y Sistemas (ancho completo) -->
-    <div class="habilidades-row-fullwidth">
-      <h3 class="habilidades-subtitulo">🗃️ Bases de Datos y Sistemas</h3>
-      <div class="habilidades-grid">
-        <div class="habilidad-icono-centrado" data-habilidad="MySQL" data-nivel="Intermedio"><img src="images/icons/mysql.png"
-            alt="MySQL"></div>
-        <div class="habilidad-icono-centrado" data-habilidad="phpMyAdmin" data-nivel="Intermedio"><img
-            src="images/icons/phpmyadmin.png" alt="phpMyAdmin"></div>
-        <div class="habilidad-icono-centrado" data-habilidad="MongoDB" data-nivel="Intermedio"><img
-            src="images/icons/mongodb.png" alt="MongoDB"></div>
-        <div class="habilidad-icono-centrado" data-habilidad="Bash" data-nivel="Básico"><img src="images/icons/bash.png"
-            alt="Bash"></div>
+      <!-- FILA 3: Bases de Datos y Sistemas -->
+      <div class="habilidades-row-fullwidth">
+        <h3 class="habilidades-subtitulo">🗃️ Bases de Datos y Sistemas</h3>
+        <div class="habilidades-iconos-centrados">
+          <div class="habilidad-icono-centrado" data-habilidad="MySQL" data-nivel="Intermedio">
+            <img src="images/icons/mysql.png" alt="MySQL">
+          </div>
+          <div class="habilidad-icono-centrado" data-habilidad="phpMyAdmin" data-nivel="Intermedio">
+            <img src="images/icons/phpmyadmin.png" alt="phpMyAdmin">
+          </div>
+          <div class="habilidad-icono-centrado" data-habilidad="MongoDB" data-nivel="Intermedio">
+            <img src="images/icons/mongodb.png" alt="MongoDB">
+          </div>
+          <div class="habilidad-icono-centrado" data-habilidad="Bash" data-nivel="Básico">
+            <img src="images/icons/bash.png" alt="Bash">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -478,9 +487,13 @@
 
   <!-- Coloca esto justo antes de cerrar </body> -->
   <div class="habilidad-modal" id="habilidad-modal">
-    <p id="modal-habilidad">aqui estoy</p>
-    <span id="modal-nivel"></span>
+    <p id="modal-habilidad"></p>
+    <div class="modal-nivel-container">
+      <span id="modal-nivel-texto"></span>
+      <div id="modal-nivel-barras" class="nivel-barras"></div>
+    </div>
   </div>
+
 
   <footer>
     <p>&copy; 2023 German Dev. Todos los derechos reservados.</p>

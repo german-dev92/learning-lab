@@ -238,37 +238,70 @@ document.addEventListener("DOMContentLoaded", () => {
   startAutoplay();
 
   // === HABILIDADES: MODAL ===
-const icons = document.querySelectorAll('.habilidad-icono');
+  const icons = document.querySelectorAll('.habilidad-icono, .habilidad-icono-centrado');
 const skillModal = document.getElementById('habilidad-modal');
 const modalHabilidad = document.getElementById('modal-habilidad');
-const modalNivel = document.getElementById('modal-nivel');
+const modalNivelTexto = document.getElementById('modal-nivel-texto');
+const modalNivelBarras = document.getElementById('modal-nivel-barras');
 
 icons.forEach(icon => {
   icon.addEventListener('mouseenter', (e) => {
     const habilidad = icon.dataset.habilidad;
-    const nivel = icon.dataset.nivel;
+    const nivel = icon.dataset.nivel.toLowerCase(); // ejemplo: "intermedio"
 
     modalHabilidad.textContent = habilidad;
-    modalNivel.textContent = `Nivel: ${nivel}`;
+    modalNivelTexto.textContent = `Nivel: ${nivel.charAt(0).toUpperCase() + nivel.slice(1)}`;
+
+    // Determinar nivel numérico
+    let nivelNum = 0;
+    if (nivel.includes("básico")) nivelNum = 3;
+    else if (nivel.includes("intermedio")) nivelNum = 6;
+    else if (nivel.includes("avanzado")) nivelNum = 9;
+    else nivelNum = 5; // por defecto
+
+    // Crear las barras
+    modalNivelBarras.innerHTML = ''; // limpiar antes
+    for (let i = 1; i <= 10; i++) {
+      const bar = document.createElement('div');
+      bar.classList.add('nivel-barra');
+
+      // Añadir tooltip con el nivel numérico de la barra
+      bar.setAttribute('data-tooltip', `Nivel ${i} de 10`);
+
+      if (i <= nivelNum) {
+        bar.classList.add('activa');
+
+        // Determinar clase de color para barras activas
+        if (nivelNum <= 4) {
+          bar.classList.add('basico');
+        } else if (nivelNum <= 8) {
+          bar.classList.add('intermedio');
+        } else {
+          bar.classList.add('avanzado');
+        }
+      }
+
+      modalNivelBarras.appendChild(bar);
+    }
 
     const rect = icon.getBoundingClientRect();
     const scrollY = window.scrollY || window.pageYOffset;
     const scrollX = window.scrollX || window.pageXOffset;
 
-    // Posicionamos el modal centrado arriba del icono
     skillModal.style.position = 'absolute';
     skillModal.style.left = `${rect.left + rect.width / 2 + scrollX}px`;
     skillModal.style.top = `${rect.top + scrollY - 10}px`;
     skillModal.style.transform = 'translate(-50%, -100%)';
     skillModal.style.zIndex = '1000';
     skillModal.style.display = 'block';
-    skillModal.style.pointerEvents = 'none'; // Para evitar interacción no deseada
+    skillModal.style.pointerEvents = 'none';
   });
 
   icon.addEventListener('mouseleave', () => {
     skillModal.style.display = 'none';
   });
 });
+
 
   // === ANIMACIÓN REVEAL SCROLL ===
   const revealElements = document.querySelectorAll('.reveal');
